@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import TravelSearch from "./TravelSearch";
 
 const HomeHero = () => {
   return (
@@ -34,8 +33,6 @@ const HomeHero = () => {
             </Button>
           </div>
         </div>
-        
-        <TravelSearch />
       </div>
     </div>
   );
