@@ -18,7 +18,7 @@ const ChatMessage = ({ content, role, timestamp }: ChatMessageProps) => {
       <div
         className={`flex gap-3 max-w-[80%] ${isUser ? "flex-row-reverse" : ""}`}
       >
-        <Avatar className={`h-8 w-8 ${isUser ? "bg-travel-blue" : "bg-travel-purple"}`}>
+        <Avatar className={`h-8 w-8 ${isUser ? "bg-travel-blue" : "bg-travel-purple"} transition-all hover:scale-105`}>
           {!isUser && (
             <AvatarImage src="/placeholder.svg" alt="TravelBud AI" />
           )}
@@ -28,15 +28,15 @@ const ChatMessage = ({ content, role, timestamp }: ChatMessageProps) => {
         </Avatar>
         
         <div
-          className={`rounded-lg px-4 py-2 ${
+          className={`rounded-lg px-4 py-3 ${
             isUser
-              ? "bg-travel-blue text-white"
-              : "bg-gray-100"
-          }`}
+              ? "bg-travel-blue text-white shadow-sm"
+              : "bg-gray-100 shadow-sm border border-gray-100"
+          } transition-all`}
         >
-          <div className="text-sm">{content}</div>
+          <div className="text-sm leading-relaxed">{content}</div>
           {timestamp && (
-            <div className="text-xs opacity-70 mt-1">
+            <div className="text-xs opacity-70 mt-1 text-right">
               {timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </div>
           )}
